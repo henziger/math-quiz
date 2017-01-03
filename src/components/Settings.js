@@ -29,7 +29,7 @@ const Settings = ({score, checkedBox, numQuestions, updateSpeed, updateNumQuesti
                     <label><input type="checkbox" onChange={updateTopics} value="diffeq" checked={checkedBox["diffeq"]}/> Differential Equations</label><br/>
 
                 <h2>Select maximum number of questions</h2>
-                <NumericInput onChange={updateNumQuestions} min={1} max={numQuestions} value={numQuestions}/>
+                <NumericInput onChange={updateNumQuestions} min={1} max={8} value={numQuestions}/>
                 <h2>Select speed</h2>
                 <select onChange={updateSpeed}>
                     <option value="default">Default</option>
