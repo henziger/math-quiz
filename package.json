@@ -4,31 +4,33 @@
   "description": "A math quiz built with React.",
   "main": "main.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js --progress"
+    "start": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
+    "build": "webpack --mode production --config webpack.config.prod.js --progress"
   },
   "repository": "henziger/math-quiz",
   "homepage": "https://github.com/henziger/math-quiz",
   "author": "Eric Henziger(hemtillhenziger@gmail.com)",
   "license": "MIT",
   "devDependencies": {
+    "ajv": "^6.6.2",
     "babel-core": "^6.26.3",
     "babel-eslint": "^7.1.0",
-    "babel-loader": "^6.2.7",
+    "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "css-loader": "^0.26.0",
     "eslint": "^3.10.2",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-react": "^6.7.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "html-webpack-plugin": "^2.30.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-hot-loader": "^3.1.3",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "webpack-dev-server": "^3.1.14"
   },
   "keywords": [
     "react",

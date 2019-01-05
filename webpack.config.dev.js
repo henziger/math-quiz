@@ -1,54 +1,47 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: __dirname + '/src/index.html',
-  filename: 'index.html',
-  inject: 'body'
-});
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	devtool: 'eval',
-	entry: [
-		'webpack-dev-server/client?http://localhost:8080',
-		'./src/main.js'
-	],
+	entry: './src/main.js',
 	output: {
 		path: __dirname + '/dist',
-		publicPath: '/',
 		filename: 'bundle.js'
 	},
-	eslint: {
-		emitWarning: true
-	},
 	module: {
-		preLoaders: [
-			{
-				test: /\.js?$/,
-				loaders: ['eslint-loader'],
-				exclude: /node_modules/
-			}
-		],
-		loaders: [
+		rules: [
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				loaders: ['babel']
+				loader:	'babel-loader'
 			},
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }
+			{
+				test: /\.css$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: 'css-loader'
+				})
+			}
 		]
 	},
-	resolve: {
-		extensions: ['', '.js', '.jsx']
-	},
-	devServer: {
-		contentBase: './dist',
-		hot: true
-	},
 	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		HtmlWebpackPluginConfig
+		new ExtractTextPlugin('style.css'),
+		new HtmlWebpackPlugin({
+			inject: true,
+			template: './src/index.html',
+			minify: {
+				removeComments: true,
+				collapseWhitespace: true,
+				removeRedundantAttributes: true,
+				useShortDoctype: true,
+				removeEmptyAttributes: true,
+				removeStyleLinkTypeAttributes: true,
+				keepClosingSlash: true,
+				minifyJS: true,
+				minifyCSS: true,
+				minifyURLs: true
+			}
+		}),
+		new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
 	]
 };
