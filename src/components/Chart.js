@@ -3,7 +3,8 @@
  * Builds a spider chart that visualizes the percentage knowledge of each math topic.
  */
 
-import React, { PropTypes } from 'react';
+import React  from 'react';
+import PropTypes from 'prop-types';
 import coveragePercentage from '../helpers/coveragePercentage';
 
 const Chart = ({ coverage }) => {

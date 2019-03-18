@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import Results from './Results';
 import Settings from './Settings';
@@ -9,7 +10,7 @@ const QUESTIONS = shuffleQuestions(questions);
 
 class QuizApp extends Component {
     constructor(props) {
-        super();
+        super(props);
         this.state = {
             categories: new Set(['calculus', 'diffeq', 'discrete', 'linalg', 'multicalc', 'statistics']),
             checked: {'calculus': true, 'diffeq': true, 'discrete': true, 'linalg': true, 'multicalc': true, 'statistics': true},
@@ -17,7 +18,7 @@ class QuizApp extends Component {
             step: 0,
             score: 0,
             speed: 1,
-            numOfQuestions: 8
+            numOfQuestions: questions.length
         };
 
         this.handleAnswerClick = this.handleAnswerClick.bind(this);

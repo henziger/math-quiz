@@ -1,13 +1,16 @@
 const webpack = require('webpack');
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+	mode: 'development',
 	entry: './src/main.js',
 	output: {
-		path: __dirname + '/dist',
+		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'
 	},
+	devtool: 'inline-source-map',
 	module: {
 		rules: [
 			{
@@ -24,24 +27,14 @@ module.exports = {
 			}
 		]
 	},
+	devServer: {
+	     contentBase: './dist'
+	},
 	plugins: [
 		new ExtractTextPlugin('style.css'),
 		new HtmlWebpackPlugin({
-			inject: true,
+			title: 'Math Quiz Dev',
 			template: './src/index.html',
-			minify: {
-				removeComments: true,
-				collapseWhitespace: true,
-				removeRedundantAttributes: true,
-				useShortDoctype: true,
-				removeEmptyAttributes: true,
-				removeStyleLinkTypeAttributes: true,
-				keepClosingSlash: true,
-				minifyJS: true,
-				minifyCSS: true,
-				minifyURLs: true
-			}
 		}),
-		new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
 	]
 };

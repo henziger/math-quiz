@@ -1,4 +1,6 @@
-import React, { PropTypes } from 'react';
+import React  from 'react';
+import PropTypes from 'prop-types';
+
 import QuestionList from './QuestionList';
 
 const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick }) => {
