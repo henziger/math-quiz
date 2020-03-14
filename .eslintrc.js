@@ -1,7 +1,7 @@
-const clientESLintConfig = require('./config/eslint');
+import clientESLintConfig, { env as _env } from './config/eslint';
 
-module.exports = Object.assign({}, clientESLintConfig, {
-  env: Object.assign({}, clientESLintConfig.env, {
+export default Object.assign({}, clientESLintConfig, {
+  env: Object.assign({}, _env, {
     node: true,
   })
 });
