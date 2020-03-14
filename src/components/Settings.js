@@ -3,9 +3,8 @@
  */
 import React  from 'react';
 import PropTypes from 'prop-types';
-import NumericInput from 'react-numeric-input';
 
-const Settings = ({score, checkedBox, numQuestions, updateSpeed, updateNumQuestions, updateTopics, startQuiz}) => {
+const Settings = ({score, checkedBox, numQuestions, maxNumOfQuestions, updateSpeed, updateNumQuestions, updateTopics, startQuiz}) => {
     return (
         <div className="wrapper">
             <header>
@@ -30,7 +29,7 @@ const Settings = ({score, checkedBox, numQuestions, updateSpeed, updateNumQuesti
                     <label><input type="checkbox" onChange={updateTopics} value="diffeq" checked={checkedBox["diffeq"]}/> Differential Equations</label><br/>
 
                 <h2>Select maximum number of questions</h2>
-                <NumericInput onChange={updateNumQuestions} min={1} max={numQuestions} value={numQuestions}/>
+                <input type="number" onChange={updateNumQuestions} min={1} max={maxNumOfQuestions} value={numQuestions}/>
                 <h2>Select speed</h2>
                 <select onChange={updateSpeed}>
                     <option value="default">Default</option>

@@ -18,7 +18,8 @@ class QuizApp extends Component {
             step: 0,
             score: 0,
             speed: 1,
-            numOfQuestions: questions.length
+            numOfQuestions: questions.length,
+            maxNumOfQuestions: questions.length
         };
 
         this.handleAnswerClick = this.handleAnswerClick.bind(this);
@@ -130,8 +131,8 @@ class QuizApp extends Component {
             this.setState({speed: 1});
     }
 
-    updateNumQuestions(value) {
-        this.setState({numOfQuestions: value});
+    updateNumQuestions(event) {
+        this.setState({numOfQuestions: parseInt(event.target.value.replace(/\D/,''))});
     }
 
     updateTopics(event) {
@@ -179,6 +180,7 @@ class QuizApp extends Component {
                         score={score}
                         checkedBox={this.state.checked}
                         numQuestions={this.state.numOfQuestions}
+                        maxNumOfQuestions={this.state.maxNumOfQuestions}
                         updateSpeed={this.updateSpeed}
                         updateNumQuestions={this.updateNumQuestions}
                         updateTopics={this.updateTopics}
