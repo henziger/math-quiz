@@ -6,14 +6,11 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 import coveragePercentage from '../helpers/coveragePercentage';
+import Highcharts from 'highcharts';
+import HighchartsMore from 'highcharts/highcharts-more';
+import HighchartsReact from 'highcharts-react-official';
 
 const Chart = ({ coverage }) => {
-
-    const ReactHighcharts = require('react-highcharts');
-
-    // Use this to get the spider chart functionality.
-    const HighchartsMore = require('highcharts-more');
-    HighchartsMore(ReactHighcharts.Highcharts);
 
     const keys = ['discrete', 'linalg', 'calculus', 'multicalc', 'statistics', 'diffeq'];
     const percentages = [];
@@ -22,10 +19,12 @@ const Chart = ({ coverage }) => {
             percentages.push(coveragePercentage(coverage[keys[i]]));
     }
 
-    const chart_config = {
+    // Use this to get the spider chart functionality.
+    HighchartsMore(Highcharts);
+
+    const options = {
         chart: {
-            polar: true,
-            type: 'line'
+            polar: true
         },
 
         title: {
@@ -70,7 +69,9 @@ const Chart = ({ coverage }) => {
         }]
     };
 
-    return (<ReactHighcharts config={chart_config}/>);
+    return (<HighchartsReact
+        highcharts={Highcharts}
+        options={options}/>);
 };
 
 Chart.propTypes = {
