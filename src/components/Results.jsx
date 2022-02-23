@@ -1,7 +1,7 @@
 import React  from 'react';
 import PropTypes from 'prop-types';
 import Chart from './Chart';
-import tally from '../helpers/tally';
+import { tally } from '../helpers';
 
 const Results = ({ userAnswers, score, restartQuiz, coverage }) => {
     const triesTotal = tally(userAnswers);

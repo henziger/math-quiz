@@ -1,18 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import KaTeXComponent from './KaTeXComponent';
 
 const Answer = ({ answer, value, handleAnswerClick }) => {
   return (
     <li
       className="question-answer"
       onClick={handleAnswerClick.bind(this, value)}>
-        {answer}
+        <KaTeXComponent texExpression={answer}/>
     </li>
   );
 };
 
 Answer.propTypes = {
-  answer: PropTypes.object.isRequired,
+  answer: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   handleAnswerClick: PropTypes.func.isRequired
 };

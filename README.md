@@ -12,7 +12,7 @@ Getting Started
 $ git clone https://github.com/henziger/math-quiz.git
 $ cd math-quiz
 $ npm install
-$ npm start
+$ npm run dev
 ```
 
 App Structure

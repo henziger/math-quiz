@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Quiz from './Quiz';
 import Results from './Results';
 import Settings from './Settings';
-import shuffleQuestions from '../helpers/shuffleQuestions';
-import { questions } from '../data/quiz-data';
+import { shuffleQuestions } from '../helpers';
+import questions from '../questions';
 
 const QUESTIONS = shuffleQuestions(questions);
 

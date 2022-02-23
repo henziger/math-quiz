@@ -1,36 +1,26 @@
 {
   "name": "math-quiz",
-  "version": "1.0.1",
-  "description": "A math quiz built with React.",
-  "main": "main.js",
+  "private": true,
+  "version": "2.0.0",
   "scripts": {
-    "start": "webpack-dev-server --mode development --config webpack.config.dev.js --open",
-    "build": "webpack --mode production --config webpack.config.prod.js --progress"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": "henziger/math-quiz",
   "homepage": "https://github.com/henziger/math-quiz",
   "author": "Eric Henziger(hemtillhenziger@gmail.com)",
   "license": "MIT",
+  "dependencies": {
+    "highcharts-react-official": "^3.1.0",
+    "katex": "^0.15.2",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
   "devDependencies": {
-    "@babel/core": "^7.11.1",
-    "@babel/preset-env": "^7.11.0",
-    "@babel/preset-react": "^7.10.4",
-    "ajv": "^6.12.4",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^4.2.1",
-    "eslint": "^7.7.0",
-    "eslint-loader": "^4.0.2",
-    "eslint-plugin-react": "^7.20.6",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "html-webpack-plugin": "^4.3.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.8.0"
   },
   "keywords": [
     "react",
@@ -38,14 +28,5 @@
     "test",
     "react-component",
     "math"
-  ],
-  "dependencies": {
-    "core-js": "^3.6.5",
-    "highcharts-react-official": "^3.0.0",
-    "katex": "^0.12.0",
-    "mathjax": "^3.0.5",
-    "prop-types": "^15.7.2",
-    "react-katex": "^2.0.2",
-    "react-mathjax": "^1.0.1"
-  }
+  ]
 }
