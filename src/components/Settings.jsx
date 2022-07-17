@@ -108,7 +108,14 @@ function Settings({
 
 Settings.propTypes = {
   score: PropTypes.number.isRequired,
-  checkedBox: PropTypes.shape.isRequired,
+  checkedBox: PropTypes.shape({
+    calculus: PropTypes.bool,
+    diffeq: PropTypes.bool,
+    discrete: PropTypes.bool,
+    linalg: PropTypes.bool,
+    multicalc: PropTypes.bool,
+    statistics: PropTypes.bool,
+  }).isRequired,
   numQuestions: PropTypes.number.isRequired,
   maxNumOfQuestions: PropTypes.number.isRequired,
   updateSpeed: PropTypes.func.isRequired,

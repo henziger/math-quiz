@@ -87,7 +87,14 @@ function Chart({ coverage }) {
 }
 
 Chart.propTypes = {
-  coverage: PropTypes.shape.isRequired,
+  coverage: PropTypes.shape({
+    calculus: PropTypes.arrayOf(PropTypes.number),
+    diffeq: PropTypes.arrayOf(PropTypes.number),
+    discrete: PropTypes.arrayOf(PropTypes.number),
+    linalg: PropTypes.arrayOf(PropTypes.number),
+    multicalc: PropTypes.arrayOf(PropTypes.number),
+    statistics: PropTypes.arrayOf(PropTypes.number),
+  }).isRequired,
 };
 
 export default Chart;

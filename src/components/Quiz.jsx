@@ -37,7 +37,20 @@ function Quiz({ step, questions, totalQuestions, score, handleAnswerClick }) {
 
 Quiz.propTypes = {
   step: PropTypes.number.isRequired,
-  questions: PropTypes.arrayOf.isRequired,
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string,
+      key: PropTypes.string,
+      category: PropTypes.string,
+      answers: PropTypes.arrayOf(
+        PropTypes.shape({
+          text: PropTypes.string,
+          key: PropTypes.string,
+        })
+      ),
+      correct: PropTypes.number,
+    })
+  ).isRequired,
   totalQuestions: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,
   handleAnswerClick: PropTypes.func.isRequired,

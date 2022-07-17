@@ -27,7 +27,12 @@ function Question({ question, answers, handleAnswerClick }) {
 
 Question.propTypes = {
   question: PropTypes.string.isRequired,
-  answers: PropTypes.arrayOf.isRequired,
+  answers: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      key: PropTypes.string,
+    })
+  ).isRequired,
   handleAnswerClick: PropTypes.func.isRequired,
 };
 

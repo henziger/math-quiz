@@ -43,6 +43,8 @@ class QuizApp extends Component {
       speed: 1,
       numOfQuestions: QUESTIONS.length,
       maxNumOfQuestions: QUESTIONS.length,
+      questions: [],
+      userAnswers: [],
     };
 
     this.handleAnswerClick = this.handleAnswerClick.bind(this);

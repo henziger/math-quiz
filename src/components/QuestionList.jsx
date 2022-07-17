@@ -20,7 +20,20 @@ function QuestionList({ questions, handleAnswerClick }) {
 }
 
 QuestionList.propTypes = {
-  questions: PropTypes.arrayOf.isRequired,
+  questions: PropTypes.arrayOf(
+    PropTypes.shape({
+      question: PropTypes.string,
+      key: PropTypes.string,
+      category: PropTypes.string,
+      answers: PropTypes.arrayOf(
+        PropTypes.shape({
+          text: PropTypes.string,
+          key: PropTypes.string,
+        })
+      ),
+      correct: PropTypes.number,
+    })
+  ).isRequired,
   handleAnswerClick: PropTypes.func.isRequired,
 };
 
