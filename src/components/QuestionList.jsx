@@ -1,11 +1,11 @@
-import React  from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Question from './Question';
 
-const QuestionList = ({ questions, handleAnswerClick }) => {
+function QuestionList({ questions, handleAnswerClick }) {
   return (
     <div className="question-list">
-      {questions.map(question => {
+      {questions.map((question) => {
         return (
           <Question
             key={question.key}
@@ -17,11 +17,11 @@ const QuestionList = ({ questions, handleAnswerClick }) => {
       })}
     </div>
   );
-};
+}
 
 QuestionList.propTypes = {
-  questions: PropTypes.array.isRequired,
-  handleAnswerClick: PropTypes.func.isRequired
+  questions: PropTypes.arrayOf.isRequired,
+  handleAnswerClick: PropTypes.func.isRequired,
 };
 
 export default QuestionList;

@@ -1,16 +1,18 @@
-import React  from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import QuestionList from './QuestionList';
 
-const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick }) => {
+function Quiz({ step, questions, totalQuestions, score, handleAnswerClick }) {
   return (
     <div className="wrapper">
       <header>
         <div className="question-count">
           <h2>Question</h2>
           <div className="question-number">{step}</div>
-          <div className="description">of<span className="total-question-number">{totalQuestions}</span></div>
+          <div className="description">
+            of<span className="total-question-number">{totalQuestions}</span>
+          </div>
         </div>
         <h1>Math Quiz</h1>
         <div className="score-container">
@@ -21,7 +23,7 @@ const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick }) => 
       </header>
       <div className="correct-modal">
         <div className="praise">Correct!</div>
-        <div className="bonus"></div>
+        <div className="bonus" />
       </div>
       <div className="questions">
         <QuestionList
@@ -31,14 +33,14 @@ const Quiz = ({ step, questions, totalQuestions, score, handleAnswerClick }) => 
       </div>
     </div>
   );
-};
+}
 
 Quiz.propTypes = {
   step: PropTypes.number.isRequired,
-  questions: PropTypes.array.isRequired,
+  questions: PropTypes.arrayOf.isRequired,
   totalQuestions: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,
-  handleAnswerClick: PropTypes.func.isRequired
+  handleAnswerClick: PropTypes.func.isRequired,
 };
 
 export default Quiz;
