@@ -46,10 +46,10 @@ Quiz.propTypes = {
         PropTypes.shape({
           text: PropTypes.string,
           key: PropTypes.string,
-        })
+        }),
       ),
       correct: PropTypes.number,
-    })
+    }),
   ).isRequired,
   totalQuestions: PropTypes.number.isRequired,
   score: PropTypes.number.isRequired,

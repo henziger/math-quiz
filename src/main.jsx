@@ -8,5 +8,5 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <QuizApp />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

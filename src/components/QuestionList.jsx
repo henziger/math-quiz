@@ -29,10 +29,10 @@ QuestionList.propTypes = {
         PropTypes.shape({
           text: PropTypes.string,
           key: PropTypes.string,
-        })
+        }),
       ),
       correct: PropTypes.number,
-    })
+    }),
   ).isRequired,
   handleAnswerClick: PropTypes.func.isRequired,
 };

@@ -31,7 +31,7 @@ Question.propTypes = {
     PropTypes.shape({
       text: PropTypes.string,
       key: PropTypes.string,
-    })
+    }),
   ).isRequired,
   handleAnswerClick: PropTypes.func.isRequired,
 };
