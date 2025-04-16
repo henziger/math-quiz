@@ -1,8 +1,6 @@
 # Math Quiz
 A mathy slide quiz built with React.
 
-[View Demo](https://henziger.se/math-quiz/)
-
 Based on David Ra's [react-quiz](https://github.com/davidrayoussef/react-quiz). 
 
 Getting Started
